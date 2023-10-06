@@ -2,7 +2,7 @@ name: "Create/Update tag"
 description: "Creates or updates a tag for a given commit."
 author: "Sangeeta"
 inputs:
-   github_token:
+  github_token:
     description: "GITHUB_TOKEN. Optional if you use checkout@v2 action."
     default: "${{ github.token }}"
   tag:
