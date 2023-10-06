@@ -9,3 +9,19 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - run: echo "commit messege = ${{ github.event.head_commit.message }}."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - uses: ${{ github.repository }}@v1
+        id: "tag_create"
+        with:
+          tag: "latest"
+          tag_exists_error: false
+          message: "Latest release"
+
+      # Print result using the env variable.
+      - run: |
+          echo "Tag already present:${{ env.TAG_EXISTS }}"
+          
+      # Print result using the action output.
+      - run: |
+          echo "Tag already present:${{ steps.tag_create.outputs.tag_exists }}"
+      
+  
