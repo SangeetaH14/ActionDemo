@@ -15,5 +15,10 @@ jobs:
           tag: "latest"
           tag_exists_error: false
           message: "Latest release"
+      - id: tag
+       # uses: SangeetaH14/ActionDemo@HEAD
+      - run: echo ${{ github.ref }}
+          
+        
       
   
