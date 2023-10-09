@@ -9,15 +9,17 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - run: echo "commit messege = ${{ github.event.head_commit.message }}."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - uses: SangeetaH14/ActionDemo@HEAD
-        id: "tag_create"
+      - uses: SangeetaH14/ActionDemo@HEAD    
+
+      # Create tag 
+      - run: echo "previous_tag=$(git describe --tags --abbrev=0 2>/dev/null || echo '')" >> $GITHUB_ENV
+      - run: echo "previous tag :) ${{ env.previous_tag }}"
+      - name: Create Tag
+        id: create_tag
+        uses: SangeetaH14/ActionDemo@main
+        if: env.previous_tag
         with:
-          tag: "latest"
-          tag_exists_error: false
-          message: "Latest release"
-      - id: tag
-       # uses: SangeetaH14/ActionDemo@HEAD
-      - run: echo ${{ github.ref }}
+          test: '[R|r]elease[d]\s+[v|V]\d(\.\d+){0,2}'
           
         
       
