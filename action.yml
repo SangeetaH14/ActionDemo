@@ -24,6 +24,8 @@ outputs:
     description: "Whether the tag already existed."
 runs:
   using: "composite"
+  steps:
+    - uses: actions/checkout@main
 branding:
   icon: "tag"
   color: "blue"
