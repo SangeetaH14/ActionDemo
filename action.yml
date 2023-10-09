@@ -1,4 +1,4 @@
-name: "Create/Update tag"
+name: "Create-Update tag 1-0-0"
 description: "Creates or updates a tag for a given commit."
 author: "Sangeeta"
 inputs:
