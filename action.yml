@@ -23,8 +23,7 @@ outputs:
   tag_exists:
     description: "Whether the tag already existed."
 runs:
-  using: "docker"
-  image: "Dockerfile"
+  using: "composite"
 branding:
   icon: "tag"
   color: "blue"
