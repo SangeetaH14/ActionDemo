@@ -20,7 +20,7 @@ jobs:
         #if: env.previous_tag
         #with:
         #  test: '[R|r]elease[d]\s+[v|V]\d(\.\d+){0,2}'
-      - name: create my tag 
-        run: |
-          git tag 1.0 
+      #- name: create my_tag 
+       # run: |
+        #  git tag 1.0 
           
